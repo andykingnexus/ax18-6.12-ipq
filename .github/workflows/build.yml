@@ -29,7 +29,7 @@ jobs:
 
       - name: Copy custom config
         run: |
-          cp ax18nano.config .config
+          cp ax18.config .config
           make defconfig
 
       - name: Download sources
