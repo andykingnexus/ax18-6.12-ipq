@@ -1,6 +1,3 @@
-This workflow automates the building of ImmortalWrt firmware.
-It is designed to be used with a user's own repository containing
-custom configurations and files.
 name: Build ImmortalWrt AX18 (Final)
 
 on:
