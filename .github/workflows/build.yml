@@ -1,26 +1,4 @@
-name: Build ImmortalWrt AX18 (Final)
-
-on:
-workflow_dispatch:
-push:
-branches:
-- main
-
-env:
-
-The URL of the official ImmortalWrt source code
-REPO_URL: https://github.com/immortalwrt/immortalwrt
-REPO_BRANCH: master
-CONFIG_FILE: ax18nano.config
-THREAD_COUNT: $(nproc)
-FIRMWARE_NAME: immortalwrt-ax18
-TZ: Asia/Shanghai
-
-jobs:
-build:
-runs-on: ubuntu-22.04
-
-steps:
+This workflow automates the building of ImmortalWrt firmware.It is designed to be used with a user's own repository containingcustom configurations and files.name: Build ImmortalWrt AX18 (Final)on:workflow_dispatch:push:branches:- mainenv:The URL of the official ImmortalWrt source codeREPO_URL: https://github.com/immortalwrt/immortalwrtREPO_BRANCH: masterCONFIG_FILE: ax18nano.configTHREAD_COUNT: $(nproc)FIRMWARE_NAME: immortalwrt-ax18TZ: Asia/Shanghaijobs:build:runs-on: ubuntu-22.04steps:
   - name: Checkout user's repository for custom files
     # This step checks out YOUR repository (e.g., VIKINGYFY/immortalwrt)
     # to access your custom-files and .config files.
