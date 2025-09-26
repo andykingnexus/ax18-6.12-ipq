@@ -7,9 +7,9 @@ on:
       - main
 
 env:
-  # 官方 ImmortalWrt 源码仓库
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: master
+  # 使用你自己的 ImmortalWrt 仓库
+  REPO_URL: https://github.com/VIKINGYFY/immortalwrt
+  REPO_BRANCH: main
   CONFIG_FILE: ax18nano.config
   FIRMWARE_NAME: immortalwrt-ax18
   TZ: Asia/Shanghai
@@ -51,7 +51,7 @@ jobs:
           ccache -M 5G
           ccache -s
 
-      - name: Clone ImmortalWrt source
+      - name: Clone your ImmortalWrt source
         run: git clone --depth=1 -b "$REPO_BRANCH" "$REPO_URL" immortalwrt
 
       - name: Update feeds
